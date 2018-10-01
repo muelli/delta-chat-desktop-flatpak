@@ -1,0 +1,48 @@
+app-id: com.delta.desktop
+branch: stable
+tags:
+  - delta.chat
+  - email
+  - chat
+  - messenger
+  - crypto
+base: io.atom.electron.BaseApp
+base-version: 18.08
+runtime: org.freedesktop.Platform
+runtime-version: 18.08
+sdk: org.freedesktop.Sdk
+command: /app/opt/Delta.Chat/deltachat-desktop
+finish-args:
+  - --socket=x11
+  - --share=ipc
+  #- --filesystem=~/JDownloader:create
+  - --share=network
+  - --env=PATH=/usr/bin:/app/bin:/app/jre/bin
+  - --env=JAVA_HOME=/app/jre
+
+build-options:
+    env:
+        JAVA_HOME: /usr/lib/sdk/openjdk9/
+modules:
+  - name: delta-binary
+    buildsystem: simple
+    build-commands:
+        - ar x deltachat-desktop_1.2.2_amd64.deb
+        - tar xvf data.tar.xz
+        - cp -ar usr/share/ /app/
+        - cp -ar opt /app/
+        
+    sources:
+      - type: file
+        path: com.delta.desktop
+
+      - type: file
+        path: com.delta.desktop.appdata.xml
+
+      - type: file
+        url: https://github.com/deltachat/deltachat-desktop/releases/download/v1.2.2/deltachat-desktop_1.2.2_amd64.deb
+        sha256: b0839920aaa8b707acdd01333641c219b1e2a7a2e63b4060ffbd68507900d270
+
+      - type: file
+        url: https://github.com/deltachat/deltachat-desktop/releases/download/v1.2.2/deltachat-desktop-1.2.2-x86_64.AppImage
+        sha256: 4bf0305fbef1ce3a01f110b4ca5cad73cc83112c83a5549f9d51d90d13564b48
