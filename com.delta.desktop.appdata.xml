@@ -2,8 +2,8 @@
 <component type="desktop">
   <id>com.delta.desktop</id>
   <metadata_license>CC0</metadata_license>
-  <project_license>proprietary</project_license>
-  <name>Zoom</name>
+  <project_license>GPLv3</project_license>
+  <name>Delta.chat</name>
   <summary>Delta.Chat email-based messanger</summary>
   
   <description>

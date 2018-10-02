@@ -12,6 +12,8 @@ runtime: org.freedesktop.Platform
 runtime-version: 18.08
 sdk: org.freedesktop.Sdk
 command: /app/opt/Delta.Chat/deltachat-desktop
+rename-icon: deltachat-desktop
+rename-desktop-file: deltachat-desktop.desktop
 finish-args:
   - --socket=x11
   - --share=ipc
