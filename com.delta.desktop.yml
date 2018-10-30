@@ -11,7 +11,7 @@ base-version: 18.08
 runtime: org.freedesktop.Platform
 runtime-version: 18.08
 sdk: org.freedesktop.Sdk
-command: /app/opt/Delta.Chat/deltachat-desktop
+command: /app/opt/DeltaChat/deltachat-desktop
 rename-icon: deltachat-desktop
 rename-desktop-file: deltachat-desktop.desktop
 finish-args:
@@ -28,7 +28,7 @@ modules:
   - name: delta-binary
     buildsystem: simple
     build-commands:
-        - ar x deltachat-desktop_1.2.2_amd64.deb
+        - ar x deltachat-desktop_1.7.1_amd64.deb
         - tar xvf data.tar.xz
         - cp -ar usr/share/ /app/
         - cp -ar opt /app/
@@ -38,5 +38,5 @@ modules:
         path: com.delta.desktop.appdata.xml
 
       - type: file
-        url: https://github.com/deltachat/deltachat-desktop/releases/download/v1.2.2/deltachat-desktop_1.2.2_amd64.deb
-        sha256: b0839920aaa8b707acdd01333641c219b1e2a7a2e63b4060ffbd68507900d270
+        url: https://github.com/deltachat/deltachat-desktop/releases/download/v1.7.1/deltachat-desktop_1.7.1_amd64.deb
+        sha256: 735d33d00ec79f768f7224b14153bf526e3738ffefeb7249315b6f4e19dbb81c
